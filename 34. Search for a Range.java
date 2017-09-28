@@ -9,7 +9,7 @@ class Solution {
 	        while (lo <= hi) {
 	           int mid = (lo+ hi) / 2;
 	            if(nums[mid] < target) lo = mid + 1;
-                else if (nums[mid] > target)  hi = mid - 1;
+                else if (nums[mid] > target) hi = mid - 1;
                 else {
 	                if(mid == 0 || nums[mid-1] < target ) a[0] = mid;
 	                if(mid == nums.length-1 || nums[mid+1] > target) a[1] = mid;
