@@ -1,0 +1,18 @@
+1. Investments in 2012 -> Leetcode 585 
+2. Tweet Recommendations. -> HashMap+HashSet
+
+3. Longest phrases in a tweet 
+4. expression tree
+5. encrypt and decrypt message
+6. information mask
+7. employee, department
+8. parent, child, tree
+Case，When, Then, Not In
+9. Orders 1
+10. Time series aggregation
+http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=208310&page=1&authorid=250363
+
+11. Genetic Mutations: LC 433. 
+Ways to Complete Kraken: LC 62加上对角线的情况
+12. apache log
+http://www.1point3acres.com/bbs/thread-209018-1-1.html
