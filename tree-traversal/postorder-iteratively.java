@@ -45,11 +45,14 @@ class Solution {
         TreeNode cur = root;
         while(cur != null || !s.isEmpty()){
         	while(cur != null){
+			//父节点和右孩子一同存入stack
 	         	if(cur.right != null) s.push(cur.right);
 	        	s.push(cur);
 	        	cur = cur.left;       		
         	}
+		//先访问左孩子
         	cur = s.pop();
+		//判断栈顶是否为本节点的右孩子，如果是，说明需要遍历右子树，把右孩子抽出来。
         	if(!s.isEmpty() && cur.right == s.peek()) {  // check whether cur is the last one 
         		TreeNode tmp = cur;
         		cur = s.pop();
