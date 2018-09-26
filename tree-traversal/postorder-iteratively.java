@@ -1,4 +1,4 @@
-/**
+ /**
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -15,27 +15,22 @@
  }
 
 class Solution {
-	// One Stack
+	// Two Stack
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         if (root == null) return list;
-
-        Stack<TreeNode> first = new Stack<>();  // store parents
-        Stack<TreeNode> second = new Stack<>();  // store children
-        first.push(root);
-        while(!first.isEmpty()){
-        	TreeNode cur = first.pop();
-        	second.push(cur);
-        	if(cur.left != null) first.push(cur.left);
-        	if(cur.right != null) first.push(cur.right);   // let left.child be first in second, push left in first before right
+        Deque<Node> stack = new ArrayDeque<>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            Node cur = stack.pop();
+            list.add(0, cur.val);
+            if(cur.left != null) stack.push(cur.left);
+            if(cur.right != null) stack.push(cur.right);
         }
 
-        while(!second.isEmpty()) {
-        	list.add(second.pop().val);
-        }
         return list;
     }
-    /* Two Stacks v1
+    /* One Stacks v1
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         if (root == null) return list;
@@ -62,7 +57,7 @@ class Solution {
         return list;
     }
     */
-    /* Two Stacks v2
+    /* One Stacks v2
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         if (root == null) return list;
